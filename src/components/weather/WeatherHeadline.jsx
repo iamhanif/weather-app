@@ -13,19 +13,43 @@ import { getFormattedDate } from "../../utils/date-util";
 export default function WeatherHeadline() {
   const { weatherData } = useContext(WeatherContext);
 
-  const { climate, location, temperature, time, feelsLike } = weatherData;
+  const { climate, location, temperature, time, feelsLike, sunrise, sunset } =
+    weatherData;
 
   console.log(CloudIcon, HazeIcon, RainyIcon, SunnyIcon, ThunderIcon, SnowIcon);
+
+  function getWeatherIcon(climate) {
+    switch (climate) {
+      case "Rain":
+        return RainyIcon;
+      case "Clouds":
+        return CloudIcon;
+      case "Haze":
+        return HazeIcon;
+      case "Fog":
+        return HazeIcon;
+      case "Thunder":
+        return ThunderIcon;
+      case "Snow":
+        return SnowIcon;
+      case "Clear":
+        return SunnyIcon;
+      case "Mist":
+        return HazeIcon;
+
+      default:
+        return SunnyIcon;
+    }
+  }
 
   return (
     <div>
       <div className="max-md:flex items-center justify-between md:-mt-10">
-        <img src={CloudIcon} alt={climate} />
+        <img src={getWeatherIcon(climate)} alt={climate} />
         <div className="max-md:flex items-center max-md:space-x-4">
           <h1 className="text-[60px] lg:text-[80px] xl:text-[100px] leading-none md:mb-4">
             {Math.round(temperature)}°
           </h1>
-
           <p className="text-sm lg:text-lg space-x-4 md:mb-4">
             Feels Like: {Math.round(feelsLike)}°
           </p>
@@ -39,6 +63,9 @@ export default function WeatherHeadline() {
         {getFormattedDate(time, "time", false)} -{" "}
         {getFormattedDate(time, "date", false)}
       </p>
+
+      <p>SunRise: {getFormattedDate(sunrise, "time", false)}</p>
+      <p>SunSet: {getFormattedDate(sunset, "time", false)}</p>
     </div>
   );
 }
