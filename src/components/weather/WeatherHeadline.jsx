@@ -3,10 +3,9 @@ import CloudIcon from "../../assets/cloud.svg";
 import HazeIcon from "../../assets/haze.svg";
 import SnowIcon from "../../assets/icons/snow.svg";
 import SunnyIcon from "../../assets/icons/sunny.svg";
+import pinIcon from "../../assets/pin.svg";
 import RainyIcon from "../../assets/rainy.svg";
 import ThunderIcon from "../../assets/thunder.svg";
-
-import pinIcon from "../../assets/pin.svg";
 import { WeatherContext } from "../../context";
 import { getFormattedDate } from "../../utils/date-util";
 
@@ -15,8 +14,6 @@ export default function WeatherHeadline() {
 
   const { climate, location, temperature, time, feelsLike, sunrise, sunset } =
     weatherData;
-
-  console.log(CloudIcon, HazeIcon, RainyIcon, SunnyIcon, ThunderIcon, SnowIcon);
 
   function getWeatherIcon(climate) {
     switch (climate) {
