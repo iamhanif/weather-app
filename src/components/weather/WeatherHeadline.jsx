@@ -12,8 +12,7 @@ import { getFormattedDate } from "../../utils/date-util";
 export default function WeatherHeadline() {
   const { weatherData } = useContext(WeatherContext);
 
-  const { climate, location, temperature, time, feelsLike, sunrise, sunset } =
-    weatherData;
+  const { climate, location, temperature, time, feelsLike } = weatherData;
 
   function getWeatherIcon(climate) {
     switch (climate) {
@@ -47,7 +46,7 @@ export default function WeatherHeadline() {
           <h1 className="text-[60px] lg:text-[80px] xl:text-[100px] leading-none md:mb-4">
             {Math.round(temperature)}°
           </h1>
-          <p className="text-sm lg:text-lg space-x-4 md:mb-4">
+          <p className="text-sm lg:text-lg space-x-4 md:mb-4 ">
             Feels Like: {Math.round(feelsLike)}°
           </p>
           <div className="flex items-center space-x-4 md:mb-4">
@@ -61,8 +60,8 @@ export default function WeatherHeadline() {
         {getFormattedDate(time, "date", false)}
       </p>
 
-      <p>SunRise: {getFormattedDate(sunrise, "time", false)}</p>
-      <p>SunSet: {getFormattedDate(sunset, "time", false)}</p>
+      {/* <p>SunRise: {getFormattedDate(sunrise, "time", false)}</p>
+      <p>SunSet: {getFormattedDate(sunset, "time", false)}</p> */}
     </div>
   );
 }
