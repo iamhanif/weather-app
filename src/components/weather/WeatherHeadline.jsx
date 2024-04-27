@@ -46,7 +46,7 @@ export default function WeatherHeadline() {
           <h1 className="text-[60px] lg:text-[80px] xl:text-[100px] leading-none md:mb-4">
             {Math.round(temperature)}°
           </h1>
-          <p className="text-sm lg:text-lg space-x-4 md:mb-4 ">
+          <p className="text-sm lg:text-lg space-x-4 md:mb-4 hidden sm:block">
             Feels Like: {Math.round(feelsLike)}°
           </p>
           <div className="flex items-center space-x-4 md:mb-4">
