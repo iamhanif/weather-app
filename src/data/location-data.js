@@ -1,5 +1,182 @@
 const data = [
   {
+    location: "Dhaka",
+    latitude: 23.8103,
+    longitude: 90.4125,
+  },
+  {
+    location: "Chittagong",
+    latitude: 22.3569,
+    longitude: 91.7832,
+  },
+  {
+    location: "Khulna",
+    latitude: 22.8158,
+    longitude: 89.55,
+  },
+  {
+    location: "Rajshahi",
+    latitude: 24.3636,
+    longitude: 88.6241,
+  },
+  {
+    location: "Sylhet",
+    latitude: 24.8949,
+    longitude: 91.8687,
+  },
+  {
+    location: "Barisal",
+    latitude: 22.701,
+    longitude: 90.3535,
+  },
+  {
+    location: "Rangpur",
+    latitude: 25.7439,
+    longitude: 89.2752,
+  },
+  {
+    location: "Mymensingh",
+    latitude: 24.7465,
+    longitude: 90.4074,
+  },
+  {
+    location: "Cox's Bazar",
+    latitude: 21.4272,
+    longitude: 92.0058,
+  },
+  {
+    location: "Jessore",
+    latitude: 23.1695,
+    longitude: 89.2132,
+  },
+  {
+    location: "Bogura",
+    latitude: 24.8484,
+    longitude: 89.3721,
+  },
+  {
+    location: "Comilla",
+    latitude: 23.4683,
+    longitude: 91.1781,
+  },
+  {
+    location: "Narayanganj",
+    latitude: 23.6231,
+    longitude: 90.5016,
+  },
+  {
+    location: "Moulvibazar",
+    latitude: 24.4828,
+    longitude: 91.7749,
+  },
+  {
+    location: "Rajbari",
+    latitude: 23.7574,
+    longitude: 89.6445,
+  },
+  {
+    location: "Gaibandha",
+    latitude: 25.3336,
+    longitude: 89.5287,
+  },
+  {
+    location: "Jamalpur",
+    latitude: 24.9375,
+    longitude: 89.937,
+  },
+  {
+    location: "Bhola",
+    latitude: 22.6859,
+    longitude: 90.6486,
+  },
+  {
+    location: "Natore",
+    latitude: 24.4143,
+    longitude: 89.0053,
+  },
+
+  {
+    location: "Dhanmondi",
+    latitude: 23.7465,
+    longitude: 90.3727,
+  },
+  {
+    location: "Mirpur",
+    latitude: 23.8166,
+    longitude: 90.3606,
+  },
+  {
+    location: "Gulshan",
+    latitude: 23.7915,
+    longitude: 90.4045,
+  },
+  {
+    location: "Uttara",
+    latitude: 23.8743,
+    longitude: 90.3998,
+  },
+  {
+    location: "Banani",
+    latitude: 23.7939,
+    longitude: 90.4086,
+  },
+  {
+    location: "Niketon",
+    latitude: 23.7621,
+    longitude: 90.4073,
+  },
+  {
+    location: "Pallabi",
+    latitude: 23.8281,
+    longitude: 90.3587,
+  },
+  {
+    location: "Basabo",
+    latitude: 23.7618,
+    longitude: 90.4304,
+  },
+  {
+    location: "Mohammadpur",
+    latitude: 23.7569,
+    longitude: 90.3585,
+  },
+  {
+    location: "Lalbagh",
+    latitude: 23.7099,
+    longitude: 90.4069,
+  },
+  {
+    location: "Wari",
+    latitude: 23.7137,
+    longitude: 90.4066,
+  },
+  {
+    location: "Baridhara",
+    latitude: 23.8115,
+    longitude: 90.4215,
+  },
+  {
+    location: "Bashundhara",
+    latitude: 23.8155,
+    longitude: 90.4255,
+  },
+  {
+    location: "Gulistan",
+    latitude: 23.7099,
+    longitude: 90.4106,
+  },
+  {
+    location: "Motijheel",
+    latitude: 23.7296,
+    longitude: 90.4125,
+  },
+  {
+    location: "Tejgaon",
+    latitude: 23.7597,
+    longitude: 90.3915,
+  },
+
+  {
     location: "Tokyo",
     latitude: 35.6895,
     longitude: 139.6917,

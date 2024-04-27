@@ -95,7 +95,7 @@ const useWeather = () => {
       }) &&
       !selectedLocation.latitude
     ) {
-      fetchWeatherData(23.750209710182087, 90.34542589506421);
+      fetchWeatherData(23.7099, 90.4106);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedLocation.latitude, selectedLocation.longitude]);
