@@ -26,7 +26,7 @@ const useWeather = () => {
 
   const { selectedLocation } = useContext(LocationContext);
 
-  const fetchWeatherData = async (latitude, longitude) => {
+  const fetchWeatherData = async (api) => {
     try {
       setLoading({
         ...loading,
@@ -35,7 +35,7 @@ const useWeather = () => {
         message: "Weather data fetching",
       });
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${
+        `https://api.openweathermap.org/${api}&appid=${
           import.meta.env.VITE_WEATHER_API_KEY
         }&units=metric`
       );
@@ -57,8 +57,6 @@ const useWeather = () => {
         cloudPercentage: data?.clouds?.all,
         wind: data?.wind?.speed,
         time: data?.dt,
-        longitude,
-        latitude,
         sunrise: data?.sys?.sunrise,
         sunset: data?.sys?.sunset,
       };
@@ -81,24 +79,27 @@ const useWeather = () => {
       message: "Finding Location...",
     });
 
-    if (selectedLocation.latitude && selectedLocation.longitude) {
-      fetchWeatherData(selectedLocation.latitude, selectedLocation.longitude);
+    if (selectedLocation) {
+      fetchWeatherData(`data/2.5/weather?q=${selectedLocation}`);
     } else {
       navigator.geolocation.getCurrentPosition(function (position) {
-        fetchWeatherData(position.coords.latitude, position.coords.longitude);
+        fetchWeatherData(
+          `geo/1.0/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}`
+        );
       });
     }
-
     if (
       !navigator.geolocation.getCurrentPosition(function (position) {
-        fetchWeatherData(position.coords.latitude, position.coords.longitude);
+        fetchWeatherData(
+          `geo/1.0/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}`
+        );
       }) &&
-      !selectedLocation.latitude
+      !selectedLocation
     ) {
-      fetchWeatherData(23.7099, 90.4106);
+      fetchWeatherData(`data/2.5/weather?q=${"dhaka"}`);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedLocation.latitude, selectedLocation.longitude]);
+  }, [selectedLocation]);
 
   return {
     weatherData,

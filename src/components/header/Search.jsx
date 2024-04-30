@@ -1,14 +1,12 @@
 import { useContext } from "react";
 import { LocationContext } from "../../context";
-import { getLocationByName } from "../../data/location-data";
 import { useDebounce } from "../../hooks";
 
 export default function Search() {
   const { setSelectedLocation } = useContext(LocationContext);
 
   const doSearch = useDebounce((term) => {
-    const fetchedLocation = getLocationByName(term);
-    setSelectedLocation({ ...fetchedLocation });
+    setSelectedLocation(term);
   }, 1000);
 
   function handleChange(e) {
